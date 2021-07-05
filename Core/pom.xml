@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>RemoteTool</artifactId>
+		<groupId>com.djelloul</groupId>
+		<version>1.1.1</version>
+	</parent>
+
+	<artifactId>RemoteTool-Core</artifactId>
+
+	<name>RemoteTool-Core</name>
+	<description>RemoteTool is a cross platform solution for remote support.</description>
+	<organization>
+		<name>Djelloul</name>
+	</organization>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>djelloul</id>
+			<name>Djelloul</name>
+			<email>sacredPhoenix888@outlook.com</email>
+			<organization>Self-Employed</organization>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.html</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.html</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+</project>

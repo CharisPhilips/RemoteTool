@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>RemoteTool</artifactId>
+		<groupId>com.djelloul</groupId>
+		<version>1.1.1</version>
+	</parent>
+
+	<artifactId>RemoteTool-Staff</artifactId>
+
+	<name>RemoteTool-Staff</name>
+	<description>RemoteTool is a cross platform solution for remote support.</description>
+	<organization>
+		<name>Djelloul</name>
+	</organization>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>djelloul</id>
+			<name>Djelloul</name>
+			<email>sacredPhoenix888@outlook.com</email>
+			<organization>Self-Employed</organization>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.djelloul</groupId>
+			<artifactId>RemoteTool-Core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jzlib</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-swing</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.html</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.html</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.djelloul.staff.StaffApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
